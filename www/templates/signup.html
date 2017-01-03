@@ -1,0 +1,36 @@
+<ion-view>
+<ion-content ng-controller="SignupController">
+	<form name="myForm" class="padding">
+          <div class="form">
+           <label class="item item-input">
+             <input type="email" placeholder="Email" name="email" ng-model="form.email" ng-required="true">
+             </label>
+
+             <label class="item item-input">
+             <input type="password" placeholder="Password" name="password" ng-minlength="6" ng-model="form.password" ng-required ="true">
+             </label>
+
+             <div class="padding">
+               <p ng-show="myForm.password.$error.minlength">Password must be minimum of 6 characters</p>
+             </div>
+
+             <label class="item item-input">
+             <input type="password" placeholder="Confirm Password" name="password2" ng-minlength="6"  ng-model="form.password1" ng-required="true">
+             </label>
+
+             
+
+             <div class="padding">
+               <p ng-show="form.password !== form.password1 ">Type in the correct password</p>
+             </div>
+
+           <div class="padding">
+            
+             <button class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="submit()">SignUp</button>
+             <a ui-sref="login" class="button button-block button-danger">Cancel</a>
+           </div>
+
+          </div>
+  </form>
+</ion-content>
+</ion-view>
