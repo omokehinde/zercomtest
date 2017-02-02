@@ -11,22 +11,22 @@
              </label>
 
              <div class="padding">
-               <p ng-show="myForm.password.$error.minlength">Password must be minimum of 6 characters</p>
+               <p ng-show="myForm.password.$error.minlength" class="text-danger">Password must be minimum of 6 characters</p>
              </div>
 
              <label class="item item-input">
-             <input type="password" placeholder="Confirm Password" name="password2" ng-minlength="6"  ng-model="form.password1" ng-required="true">
+             <input type="password" placeholder="Confirm Password" name="password2" ng-minlength="6"  ng-model="form.password1" ng-pattern="form.password" ng-required="true">
              </label>
 
              
 
              <div class="padding">
-               <p ng-show="form.password !== form.password1 ">Type in the correct password</p>
+               <p ng-show="form.password !== form.password1 " class="text-danger">Type in the correct password</p>
              </div>
 
            <div class="padding">
             
-             <button class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="submit()">SignUp</button>
+             <button class="button button-block button-positive" ng-disabled=" myForm.$invalid" ng-click="submit()">SignUp</button>
              <a ui-sref="login" class="button button-block button-danger">Cancel</a>
            </div>
 
